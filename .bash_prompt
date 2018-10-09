@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+COLOR_NC='\e[0m' # No Color
+COLOR_WHITE='\e[1;37m'
+COLOR_BLACK='\e[0;30m'
+COLOR_BLUE='\e[0;34m'
+COLOR_LIGHT_BLUE='\e[1;34m'
+COLOR_GREEN='\e[0;32m'
+COLOR_LIGHT_GREEN='\e[1;32m'
+COLOR_CYAN='\e[0;36m'
+COLOR_LIGHT_CYAN='\e[1;36m'
+COLOR_RED='\e[0;31m'
+COLOR_LIGHT_RED='\e[1;31m'
+COLOR_PURPLE='\e[0;35m'
+COLOR_LIGHT_PURPLE='\e[1;35m'
+COLOR_BROWN='\e[0;33m'
+COLOR_YELLOW='\e[1;33m'
+COLOR_GRAY='\e[1;30m'
+COLOR_LIGHT_GRAY='\e[0;37m'
+
+prompt_func() {
+    previous_return_value=$?;
+
+    branch=$(git symbolic-ref -q HEAD 2>/dev/null)
+
+    #!(( $? > 0 )) && SHA1=' : '$(git rev-parse --short --quiet HEAD)
+    #(( $? > 0 )) && SHA1=''
+    # just include \$SHA1 below to display current ref
+
+    prompt="\[\033]0;${PWD}\007\]\[${COLOR_NC}\]\W\[${COLOR_GREEN}\]$(__git_ps1)\[${COLOR_LIGHT_RED}\]\[${COLOR_NC}\] "
+
+    #prompt="\033]0;${PWD}\007\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_NC}\] "
+    #prompt="\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_YELLOW}\]$(git_dirty_flag)\[${COLOR_NC}\] "
+
+    if test $previous_return_value -eq 0
+    then
+        PS1="  ${prompt}λ "
+    else
+        PS1="  ${prompt}\[${COLOR_LIGHT_RED}\]λ \[${COLOR_NC}\]"
+    fi
+    # PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
+    PS1="$PS1"
+}
+PROMPT_COMMAND=prompt_func
+
+export PS2='> '    # Secondary prompt
+export PS3='#? '   # Prompt 3
+export PS4='+'     # Prompt 4

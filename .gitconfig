@@ -1,0 +1,47 @@
+[alias]
+  cm = commit -m
+  cma = commit -am
+  st = status
+  co = checkout
+  df = diff
+  cl = clone
+  lg = log --graph --format=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset'
+  lg2 = log --graph --all --format=format:'%C(bold yellow)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
+[user]
+  name = Madhusudhan Srinivasa
+  email = madhums8@gmail.com
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[github]
+  user = madhums
+[core]
+  excludesfile = ~/.git-global-ignore
+	autocrlf = true
+	whitespace = cr-at-eol
+	safecrlf = false
+[push]
+	default = current
+[credential]
+	helper = osxkeychain
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[merge]
+  ff = no
+  commit = no
+[pull]
+	rebase = true
