@@ -2,6 +2,9 @@
 export EDITOR=vim
 
 # Git completion
+source ~/git-completion.sh
+
+# Git prompt
 source ~/.git-prompt.sh
 
 # git show unstaged and staged symbol
