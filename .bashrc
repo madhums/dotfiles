@@ -2,7 +2,7 @@
 export EDITOR=vim
 
 # Git completion
-source ~/git-completion.sh
+source ~/bin/git-completion.sh
 
 # Git prompt
 source ~/.git-prompt.sh
@@ -19,4 +19,4 @@ source ~/.bash_prompt
 # aliases
 source ~/.bash_aliases
 
-source ~/z.sh
+export PATH="$HOME/bin:$PATH"
