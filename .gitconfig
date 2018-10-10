@@ -36,6 +36,8 @@
 	safecrlf = false
 [push]
 	default = current
+[branch]
+  autosetuprebase = always
 [credential]
 	helper = osxkeychain
 [url "git@github.com:"]
