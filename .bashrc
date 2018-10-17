@@ -19,4 +19,8 @@ source ~/.bash_prompt
 # aliases
 source ~/.bash_aliases
 
+# z
+source ~/bin/z.sh
+
 export PATH="$HOME/bin:$PATH"
+export PYTHONUSERBASE=$HOME/.local
