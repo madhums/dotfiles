@@ -9,7 +9,8 @@
   lg2 = log --graph --all --format=format:'%C(bold yellow)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
 [user]
   name = Madhusudhan Srinivasa
-  email = madhums8@gmail.com
+  email = me@madhums.me
+  signingkey = 9D4BF17858FFB6A4
 [color]
   branch = auto
   diff = auto
@@ -47,3 +48,7 @@
   commit = no
 [pull]
 	rebase = true
+[commit]
+  gpgsign = true
+[gpg]
+  program = gpg2

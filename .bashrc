@@ -24,3 +24,4 @@ source ~/bin/z.sh
 
 export PATH="$HOME/bin:$PATH"
 export PYTHONUSERBASE=$HOME/.local
+export GPG_TTY=$(tty)
